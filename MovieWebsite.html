@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Reviews</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">123 Movies</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<!-- home -->
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+				</li>
+
+				<!-- upcoming movies -->
+				<li class="nav-item">
+					<a class="nav-link" href="#">Upcoming Movies</a>
+				</li>
+
+				<!-- contact us -->
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact us</a>
+				</li>
+
+				<!-- About us -->
+				<li class="nav-item">
+					<a class="nav-link" href="#">About Us</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- jumbotron -->
+	<div class="jumbotron">
+		<h1 class="display-4">My Movie Reviews!</h1>
+		<p class="lead">Here are my reviews of some of the popular movies.</p>
+		<hr class="my-4">
+		<p>Please read through it and let me know your opinion at kopplina@mail.gvsu.edu.</p>
+	</div>
+
+	<!-- form -->
+	<form>
+		<!-- movie title -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" >Movie Title</span>
+			</div>
+			<input id="movieTitle" type="text" class="form-control" placeholder="The Princess Bride" >
+		</div>
+
+		<!-- image url -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" >Image URL</span>
+			</div>
+			<input id="imageURL" type="text" class="form-control" placeholder="URL" >
+		</div>
+
+		<!-- rating -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" >Rating</span>
+			</div>
+			<input id="rating" type="text" class="form-control" placeholder="5 stars!" >
+		</div>
+
+		<!-- review -->
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" >Review</span>
+			</div>
+			<input id="review" type="text" class="form-control" placeholder="I liked this movie because..." >
+		</div>
+
+		<a id="submitReview" class="btn btn-primary">Submit</a>
+		<!-- <button id="submitReview" type="submit" class="btn btn-primary">Submit</button> -->
+	</form>
+
+	<!-- line across page before reviews -->
+	<hr class="my-4">
+
+	<div class="container-fluid">
+		<div class="row" id="reviewGrid">
+		    <!-- <div class="col-md-4" style="background-color:red;">
+				<p>Lorem ipsum...</p>
+		    </div> -->
+		</div>
+	</div>
+
+	<!-- modal -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLongTitle">Update Review</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<!-- movie title -->
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" >Movie Title</span>
+						</div>
+						<input id="movieTitleModal" type="text" class="form-control" placeholder="The Princess Bride" >
+					</div>
+			
+					<!-- image url -->
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" >Image URL</span>
+						</div>
+						<input id="imageURLModal" type="text" class="form-control" placeholder="URL" >
+					</div>
+			
+					<!-- rating -->
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" >Rating</span>
+						</div>
+						<input id="ratingModal" type="text" class="form-control" placeholder="5 stars!" >
+					</div>
+			
+					<!-- review -->
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" >Review</span>
+						</div>
+						<input id="reviewModal" type="text" class="form-control" placeholder="I liked this movie because..." >
+					</div>
+			
+					<!-- <a id="submitReviewModal" class="btn btn-primary">Submit</a> -->
+				</form>
+			
+			</div>
+			<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="button" onclick="saveChanges()" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+
+			<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+
+
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<!-- scripts -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script type='text/javascript'  src="Backend.js"></script>
+</body>
+</html>
