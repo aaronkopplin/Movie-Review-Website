@@ -45,54 +45,80 @@
 		<p>Please read through it and let me know your opinion at kopplina@mail.gvsu.edu.</p>
 	</div>
 
-	<!-- form -->
-	<form>
-		<!-- movie title -->
-		<div class="input-group mb-3">
-			<div class="input-group-prepend">
-				<span class="input-group-text" >Movie Title</span>
-			</div>
-			<input id="movieTitle" type="text" class="form-control" placeholder="The Princess Bride" >
-		</div>
+	<button type="button" class="btn btn-danger" onclick="showAdminPanel()">Admin</button>
+	<button type="button" class="btn btn-warning" onclick="showUserPanel()">User</button>
 
-		<!-- image url -->
-		<div class="input-group mb-3">
-			<div class="input-group-prepend">
-				<span class="input-group-text" >Image URL</span>
-			</div>
-			<input id="imageURL" type="text" class="form-control" placeholder="URL" >
-		</div>
-
-		<!-- rating -->
-		<div class="input-group mb-3">
-			<div class="input-group-prepend">
-				<span class="input-group-text" >Rating</span>
-			</div>
-			<input id="rating" type="text" class="form-control" placeholder="5 stars!" >
-		</div>
-
-		<!-- review -->
-		<div class="input-group mb-3">
-			<div class="input-group-prepend">
-				<span class="input-group-text" >Review</span>
-			</div>
-			<input id="review" type="text" class="form-control" placeholder="I liked this movie because..." >
-		</div>
-
-		<a id="submitReview" class="btn btn-primary">Submit</a>
-		<!-- <button id="submitReview" type="submit" class="btn btn-primary">Submit</button> -->
-	</form>
+	
 
 	<!-- line across page before reviews -->
 	<hr class="my-4">
 
-	<div class="container-fluid">
-		<div class="row" id="reviewGrid">
-		    <!-- <div class="col-md-4" style="background-color:red;">
-				<p>Lorem ipsum...</p>
-		    </div> -->
+	<div id="adminPanel">
+		<!-- form -->
+		<form  id="adminForm">
+			<!-- movie title -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" >Movie Title</span>
+				</div>
+				<input id="movieTitle" type="text" class="form-control" placeholder="The Princess Bride" >
+			</div>
+
+			<!-- image url -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" >Image URL</span>
+				</div>
+				<input id="imageURL" type="text" class="form-control" placeholder="URL" >
+			</div>
+
+			<!-- rating -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" >Rating</span>
+				</div>
+				<input id="rating" type="text" class="form-control" placeholder="5 stars!" >
+			</div>
+
+			<!-- review -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" >Review</span>
+				</div>
+				<input id="review" type="text" class="form-control" placeholder="I liked this movie because..." >
+			</div>
+
+			<a id="submitReview" class="btn btn-primary" onclick="addReview()">Submit</a>
+			<!-- <button id="submitReview" type="submit" class="btn btn-primary">Submit</button> -->
+		</form>
+		<p></p>
+		<div class="container-fluid">
+			<div class="row" id="moviePanel">
+				
+			</div>
 		</div>
 	</div>
+	
+
+	<div id="userPanel" style="display: none">
+		<div class="input-group mb-3" > 
+			<div class="input-group-prepend">
+				<span class="input-group-text" >Search</span>
+			</div>
+			<input id="searchBar" type="text" class="form-control" placeholder="The Princess Bride" >
+		</div>
+
+		<a id="searchButton" class="btn btn-primary" onclick="searchMovies()">Search</a>
+
+		<p></p>
+
+		<div class="container-fluid" >
+			<div class="row" id="resultsGrid">
+				
+			</div>
+		</div>
+	</div>
+	
 
 	<!-- modal -->
 	<!-- Modal -->
